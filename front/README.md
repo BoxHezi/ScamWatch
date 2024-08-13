@@ -2,6 +2,12 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Set up VirusTotal Key
+
+1. Create a file named `.env`
+2. Paste content `REACT_APP_VTKEY = <API_KEY>`
+3. Replace the `<API_KEY>` with your key
+
 ## Available Scripts
 
 In the project directory, you can run:
