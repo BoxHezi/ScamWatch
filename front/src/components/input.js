@@ -1,6 +1,6 @@
 import { domainCheck } from "../virustotal";
 
-function Input({ suspiciousType }) {
+function Input({ suspiciousType, onDataReceived }) {
   return (
     <div>
       <input
@@ -11,20 +11,20 @@ function Input({ suspiciousType }) {
     </div>
   );
 
-  function check() {
+  async function check() {
     const target = document.getElementById("suspicious" + suspiciousType);
     console.log(target)
 
     if (suspiciousType === "domain") {
-      // TODO: virustotal checking url
-      const data = domainCheck(target.value);
+      const data = await domainCheck(target.value);
+      onDataReceived(data.data)
     } else if (suspiciousType === "number") {
       // TODO: check phone number
       console.log("Checking number");
     }
   }
 
-  function virusTotalCheck(url) {}
+  // function virusTotalCheck(url) {}
 }
 
 export default Input;
